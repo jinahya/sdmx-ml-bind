@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.github.jinahya</groupId>
+    <artifactId>jinahya-parent</artifactId>
+    <version>0.7.3</version>
+  </parent>
+
+  <groupId>com.github.jinahya</groupId>
+  <artifactId>sdmxml21-bind</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>${project.artifactId}</name>
+  <description>library for reading/writing non-octet aligned values</description>
+  <url>https://github.com/jinahya/${project.version}</url>
+
+  <scm>
+    <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/jinahya/${project.artifactId}</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/jinahya/${project.artifactId}/issues</url>
+  </issueManagement>
+
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.testSource>1.8</maven.compiler.testSource>
+    <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>    
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.2</version>
+        <executions>
+          <execution>
+            <id>xjc</id>
+            <goals>
+              <!--<goal>xjc</goal>-->
+            </goals>
+            <configuration>
+              <extension>true</extension>
+              <generateEpisode>true</generateEpisode>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.13.1</version>
+        <executions>
+          <execution>
+            <id>generate</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>src/main/xsd</schemaDirectory>
+              <schemaIncludes>
+                <include>*.xsd</include>
+              </schemaIncludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
