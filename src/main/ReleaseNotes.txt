@@ -1,0 +1,10 @@
+Release Notes:
+
+2011-04-18: INITIAL RELEASE
+
+2011-07-14: BUG FIXES
+			
+				SDMXMessage.xsd: Documentation of Structure updated to remove references to stand-alone concepts.
+				SDMXStructure.xsd: Documentation of StructureType/Concepts and ConceptTypes updated to remove references to stand-alone concepts.
+				SDMXStructureConcept.xsd: documentation of schema file updated to remove references to stand-alone concepts.
+				SDMXStructureStructureSet.xsd: StructureMapType/ComponenetMap maxOccurs changed from default (1) to unbounded.

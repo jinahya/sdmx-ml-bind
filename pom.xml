@@ -14,7 +14,7 @@
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
-  <description>library for reading/writing non-octet aligned values</description>
+  <description>sdmx-ml-bind</description>
   <url>https://github.com/jinahya/${project.version}</url>
 
   <scm>
@@ -38,23 +38,6 @@
 
   <build>
     <plugins>
-      <plugin>    
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>2.2</version>
-        <executions>
-          <execution>
-            <id>xjc</id>
-            <goals>
-              <!--<goal>xjc</goal>-->
-            </goals>
-            <configuration>
-              <extension>true</extension>
-              <generateEpisode>true</generateEpisode>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
@@ -66,10 +49,7 @@
               <goal>generate</goal>
             </goals>
             <configuration>
-              <schemaDirectory>src/main/xsd</schemaDirectory>
-              <schemaIncludes>
-                <include>*.xsd</include>
-              </schemaIncludes>
+              <schemaDirectory>src/main/schemas</schemaDirectory>
             </configuration>
           </execution>
         </executions>
